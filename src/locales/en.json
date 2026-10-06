@@ -1,0 +1,11 @@
+{
+    "errors": {
+        "network": "Cannot reach the server. Check your connection.",
+        "unauthorized": "Your session has expired. Please log in again.",
+        "forbidden": "You don't have permission to do this.",
+        "notFound": "The requested item was not found.",
+        "validation": "Some fields are not valid.",
+        "tooManyRequests": "Too many requests. Please wait a moment.",
+        "server": "Something went wrong on the server. Please try again."
+    }
+}
