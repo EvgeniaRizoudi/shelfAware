@@ -28,7 +28,7 @@ export function PasswordInputField({ label, id, ...inputProps }: PasswordInputFi
                         onClick={() => setShow(!show)}
                         aria-label={t(show ? "auth.password.hide" : "auth.password.show")}
                     >
-                        {show ? <EyeOffIcon /> : <EyeIcon />}
+                        {show ? <EyeIcon /> : <EyeOffIcon />}
                     </InputGroupButton>
                 </InputGroupAddon>
             </InputGroup>
