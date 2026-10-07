@@ -29,7 +29,7 @@ export function LoginPage() {
                 onChange={(e) => setPassword(e.target.value)}
             />
 
-            <Button type="submit" color="primary">
+            <Button type="submit" className="mt-4">
                 {submitButtonLabel}
             </Button>
         </form>
