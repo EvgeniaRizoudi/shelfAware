@@ -21,4 +21,9 @@ export default defineConfig([
             globals: globals.browser,
         },
     },
+    {
+        // shadcn files export variants next to components, which is fine there
+        files: ["src/components/ui/**/*.tsx"],
+        rules: { "react-refresh/only-export-components": "off" },
+    },
 ]);

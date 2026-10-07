@@ -6,6 +6,11 @@ import { InventoryPage } from "../features/inventory/InventoryPage";
 import { OrdersPage } from "../features/orders/OrdersPage";
 import { SettingsPage } from "../features/settings/SettingsPage";
 import { MapPage } from "../features/map/MapPage";
+import { AuthLayout } from "./AuthLayout";
+import { LoginPage } from "../features/auth/login/LoginPage";
+import { RegisterPage } from "../features/auth/register/RegisterPage";
+import { ForgotPasswordPage } from "../features/auth/forgot-password/ForgotPasswordPage";
+import { PasswordResetPage } from "../features/auth/password-reset/PasswordResetPage";
 
 export const router = createBrowserRouter([
     {
@@ -19,6 +24,15 @@ export const router = createBrowserRouter([
             { path: "orders", element: <OrdersPage /> },
             { path: "settings", element: <SettingsPage /> },
             { path: "map", element: <MapPage /> },
+        ],
+    },
+    {
+        element: <AuthLayout />,
+        children: [
+            { path: "login", element: <LoginPage /> },
+            { path: "register", element: <RegisterPage /> },
+            { path: "forgot-password", element: <ForgotPasswordPage /> },
+            { path: "password-reset", element: <PasswordResetPage /> },
         ],
     },
 ]);
