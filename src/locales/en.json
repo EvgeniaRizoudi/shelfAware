@@ -1,4 +1,10 @@
 {
+    "general": {
+        "translation": {
+            "el": "ΕΛ",
+            "en": "EN"
+        }
+    },
     "errors": {
         "network": "Cannot reach the server. Check your connection.",
         "unauthorized": "Your session has expired. Please log in again.",
@@ -7,5 +13,32 @@
         "validation": "Some fields are not valid.",
         "tooManyRequests": "Too many requests. Please wait a moment.",
         "server": "Something went wrong on the server. Please try again."
+    },
+    "auth": {
+        "tagline": "Nothing expires on your watch",
+        "login": {
+            "title": "Login",
+            "email": "Email",
+            "password": "Password",
+            "submit": "Login",
+            "forgotPassword": "Forgot password?",
+            "register": "Create an account"
+        },
+        "forgotPassword": {
+            "title": "Forgot password?",
+            "email": "Email",
+            "submit": "Send reset link",
+            "backToLogin": "Back to login"
+        },
+        "passwordReset": {
+            "title": "Reset password",
+            "newPassword": "New password",
+            "confirmNewPassword": "Confirm new password",
+            "submit": "Reset password"
+        },
+        "password": {
+            "show": "Show password",
+            "hide": "Hide password"
+        }
     }
 }
