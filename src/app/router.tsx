@@ -11,6 +11,7 @@ import { LoginPage } from "../features/auth/login/LoginPage";
 import { RegisterPage } from "../features/auth/register/RegisterPage";
 import { ForgotPasswordPage } from "../features/auth/forgot-password/ForgotPasswordPage";
 import { PasswordResetPage } from "../features/auth/password-reset/PasswordResetPage";
+import { NotFoundPage } from "../features/not-found/NotFoundPage";
 
 export const router = createBrowserRouter([
     {
@@ -34,5 +35,9 @@ export const router = createBrowserRouter([
             { path: "forgot-password", element: <ForgotPasswordPage /> },
             { path: "password-reset", element: <PasswordResetPage /> },
         ],
+    },
+    {
+        path: "*",
+        element: <NotFoundPage />,
     },
 ]);
