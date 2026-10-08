@@ -6,13 +6,13 @@
         }
     },
     "errors": {
-        "network": "Cannot reach the server. Check your connection.",
-        "unauthorized": "Your session has expired. Please log in again.",
-        "forbidden": "You don't have permission to do this.",
-        "notFound": "The requested item was not found.",
-        "validation": "Some fields are not valid.",
-        "tooManyRequests": "Too many requests. Please wait a moment.",
-        "server": "Something went wrong on the server. Please try again."
+        "network": "Cannot reach the server. Check your connection",
+        "unauthorized": "Your session has expired. Please log in again",
+        "forbidden": "You don't have permission to do this",
+        "notFound": "The requested item was not found",
+        "validation": "Some fields are not valid",
+        "tooManyRequests": "Too many requests. Please wait a moment",
+        "server": "Something went wrong on the server. Please try again"
     },
     "auth": {
         "tagline": "Nothing expires on your watch",
@@ -39,6 +39,29 @@
         "password": {
             "show": "Show password",
             "hide": "Hide password"
+        }
+    },
+    "notFound": {
+        "title": "Page not found",
+        "message": "This page expired before anyone noticed. Relax, your stock didn't"
+    },
+    "validation": {
+        "required": "This field is required",
+        "email": "Please enter a valid email address",
+        "passwordsDontMatch": "Passwords do not match",
+        "password": {
+            "minLength": "Password must be at least {min} characters long",
+            "maxLength": "Password cannot be longer than {max} characters",
+            "lowercase": "Password must contain at least one lowercase letter",
+            "uppercase": "Password must contain at least one uppercase letter",
+            "number": "Password must contain at least one number",
+            "symbol": "Password must contain at least one symbol"
+        },
+        "strength": {
+            "weak": "Weak",
+            "fair": "Fair",
+            "good": "Good",
+            "strong": "Strong"
         }
     }
 }
