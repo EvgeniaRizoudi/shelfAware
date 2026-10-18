@@ -9,7 +9,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 const loginSchema = z.object({
-    email: emailField,
+    email: emailField.pipe(requiredField),
     password: requiredField,
 });
 

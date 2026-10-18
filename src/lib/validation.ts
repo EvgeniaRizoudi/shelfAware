@@ -1,8 +1,19 @@
 import { z } from "zod";
 
-export const emailField = z.string().min(1, "validation.required").email("validation.email");
+const isEmail = (value: string) => z.email().safeParse(value).success;
+
+export const emailField = z
+    .string()
+    .refine((value) => value === "" || isEmail(value), "validation.email");
+
+export const PASSWORD_MIN_LENGTH = 8;
+
 export const passwordRules = [
-    { key: "validation.password.minLength", test: (v: string) => v.length >= 8 },
+    {
+        key: "validation.password.minLength",
+        min: PASSWORD_MIN_LENGTH,
+        test: (v: string) => v.length >= PASSWORD_MIN_LENGTH,
+    },
     { key: "validation.password.lowercase", test: (v: string) => /[a-z]/.test(v) },
     { key: "validation.password.uppercase", test: (v: string) => /[A-Z]/.test(v) },
     { key: "validation.password.number", test: (v: string) => /\d/.test(v) },
