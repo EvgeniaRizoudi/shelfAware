@@ -10,14 +10,15 @@ const levels = [
     { label: "validation.strength.strong", color: "bg-success" },
 ];
 
+// Rules passed (0-5) → index in levels. Strong only when every rule passes.
+const levelForScore = [0, 0, 1, 1, 2, 3];
+
 export function PasswordStrengthMeter({ password }: { password: string }) {
     const { t } = useTranslation();
     if (!password) return null;
 
     const score = getPasswordStrength(password);
-    // Map 0–5 passed rules onto 4 levels
-    const level =
-        levels[Math.max(0, Math.ceil((score / passwordRules.length) * levels.length) - 1)];
+    const level = levels[levelForScore[score]];
     const filledBars = levels.indexOf(level) + 1;
 
     return (
@@ -46,7 +47,7 @@ export function PasswordStrengthMeter({ password }: { password: string }) {
                             )}
                         >
                             {passed ? <Check className="size-4" /> : <X className="size-4" />}
-                            {t(rule.key)}
+                            {t(rule.key, { min: rule.min })}
                         </li>
                     );
                 })}

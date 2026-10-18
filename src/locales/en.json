@@ -50,8 +50,8 @@
         "email": "Please enter a valid email address",
         "passwordsDontMatch": "Passwords do not match",
         "password": {
-            "minLength": "Password must be at least {min} characters long",
-            "maxLength": "Password cannot be longer than {max} characters",
+            "minLength": "Password must be at least {{min}} characters long",
+            "maxLength": "Password cannot be longer than {{max}} characters",
             "lowercase": "Password must contain at least one lowercase letter",
             "uppercase": "Password must contain at least one uppercase letter",
             "number": "Password must contain at least one number",
