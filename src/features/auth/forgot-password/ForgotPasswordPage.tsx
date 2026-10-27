@@ -7,16 +7,15 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowLeftIcon } from "lucide-react";
+import { useMutation } from "@tanstack/react-query";
+import { toast } from "sonner";
+import { forgotPassword } from "../authApi";
 
 const forgotPasswordSchema = z.object({
     email: emailField.pipe(requiredField),
 });
 
 type ForgotPasswordValues = z.infer<typeof forgotPasswordSchema>;
-
-function onSubmit(values: ForgotPasswordValues) {
-    console.log(values); // later: call the forgot password API
-}
 
 export function ForgotPasswordPage() {
     const { t } = useTranslation();
@@ -33,6 +32,15 @@ export function ForgotPasswordPage() {
         mode: "onTouched",
     });
 
+    const forgotPasswordMutation = useMutation({
+        mutationFn: forgotPassword,
+        onSuccess: () => toast.success(t("auth.forgotPassword.sent")),
+    });
+
+    function onSubmit(values: ForgotPasswordValues) {
+        forgotPasswordMutation.mutate(values);
+    }
+
     return (
         <main>
             <NavLink
@@ -42,7 +50,7 @@ export function ForgotPasswordPage() {
                 <ArrowLeftIcon className="w-4 h-4 mr-2" /> {goToLoginLabel}
             </NavLink>
             <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)} noValidate>
-                <h2 className="text-2xl font-bold">{forgotPasswordTitle}</h2>
+                <h2 className="mb-6 text-2xl font-bold">{forgotPasswordTitle}</h2>
                 <InputField
                     label={emailLabel}
                     id="email"
@@ -51,7 +59,11 @@ export function ForgotPasswordPage() {
                     error={errors.email?.message && t(errors.email.message)}
                 />
 
-                <Button type="submit" className="mt-4">
+                <Button
+                    type="submit"
+                    className="mt-4"
+                    disabled={forgotPasswordMutation.isPending}
+                >
                     {submitButtonLabel}
                 </Button>
             </form>

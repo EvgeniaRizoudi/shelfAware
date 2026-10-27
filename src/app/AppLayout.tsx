@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router";
-
+import { LogoutButton } from "@/components/LogoutButton";
 export function AppLayout() {
     const links = [
         { to: "/dashboard", label: "Dashboard" },
@@ -18,6 +18,7 @@ export function AppLayout() {
                         {link.label}
                     </NavLink>
                 ))}
+                <LogoutButton />
             </nav>
             <main>
                 <Outlet />
