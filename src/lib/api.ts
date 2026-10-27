@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "sonner";
 import config from "../config/config";
 import i18n from "./i18n";
 
@@ -15,21 +16,21 @@ api.interceptors.response.use(
             const status = error.response?.status;
 
             if (status === undefined) {
-                console.warn(i18n.t("errors.network"));
+                toast.error(i18n.t("errors.network"));
             } else if (status === 401) {
                 // TODO APO-8: log the user out and redirect to /login
                 console.warn(i18n.t("errors.unauthorized"));
             } else if (status === 403) {
-                console.warn(i18n.t("errors.forbidden"));
+                toast.error(i18n.t("errors.forbidden"));
             } else if (status === 404) {
                 console.warn(i18n.t("errors.notFound"));
             } else if (status === 422) {
                 // Field errors are shown by the form that sent the request
                 console.warn(i18n.t("errors.validation"));
             } else if (status === 429) {
-                console.warn(i18n.t("errors.tooManyRequests"));
+                toast.error(i18n.t("errors.tooManyRequests"));
             } else if (status >= 500) {
-                console.warn(i18n.t("errors.server"));
+                toast.error(i18n.t("errors.server"));
             }
         }
 

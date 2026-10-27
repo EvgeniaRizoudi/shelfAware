@@ -5,6 +5,12 @@
             "en": "EN"
         }
     },
+    "toasts": {
+        "loginSuccess": "Welcome back!",
+        "logoutSuccess": "You have been logged out",
+        "registerSuccess": "Account created. You can log in now",
+        "passwordResetSuccess": "Password changed. Log in with your new password"
+    },
     "errors": {
         "network": "Cannot reach the server. Check your connection",
         "unauthorized": "Your session has expired. Please log in again",
@@ -16,29 +22,47 @@
     },
     "auth": {
         "tagline": "Nothing expires on your watch",
+        "logout": "Logout",
         "login": {
             "title": "Login",
             "email": "Email",
             "password": "Password",
             "submit": "Login",
             "forgotPassword": "Forgot password?",
-            "register": "Create an account"
+            "register": "New to the platform? Create an account"
         },
         "forgotPassword": {
             "title": "Forgot password?",
             "email": "Email",
             "submit": "Send reset link",
-            "backToLogin": "Back to login"
+            "backToLogin": "Back to login",
+            "sent": "If this email is registered, we sent you a reset link"
         },
         "passwordReset": {
             "title": "Reset password",
             "newPassword": "New password",
             "confirmNewPassword": "Confirm new password",
-            "submit": "Reset password"
+            "submit": "Reset password",
+            "invalidToken": "This reset link is invalid or has expired"
         },
+        "clear": "Clear",
         "password": {
             "show": "Show password",
             "hide": "Hide password"
+        },
+        "register": {
+            "title": "Create Account",
+            "name": "Full Name",
+            "email": "Email",
+            "password": "Password",
+            "department": "Department",
+            "positions": "Positions",
+            "roles": "Role",
+            "placeholder": "Select...",
+            "general": "General",
+            "chooseDepartmentFirst": "Choose a department first",
+            "submit": "Register",
+            "alreadyUser": "Already a user? Login in"
         }
     },
     "notFound": {
@@ -49,6 +73,7 @@
         "required": "This field is required",
         "email": "Please enter a valid email address",
         "passwordsDontMatch": "Passwords do not match",
+        "invalid_credentials": "Wrong email or password",
         "password": {
             "minLength": "Password must be at least {{min}} characters long",
             "maxLength": "Password cannot be longer than {{max}} characters",
