@@ -16,3 +16,14 @@ export async function resetPassword(payload: { token: string; password: string }
 export async function logout() {
     await api.post("/api/auth/logout");
 }
+
+export type CurrentUser = {
+    id: number;
+    email: string;
+    name: string;
+};
+
+export async function getCurrentUser() {
+    const { data } = await api.get<CurrentUser>("/api/auth/current-user");
+    return data;
+}
