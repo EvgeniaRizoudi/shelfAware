@@ -3,7 +3,8 @@
         "translation": {
             "el": "ΕΛ",
             "en": "EN"
-        }
+        },
+        "goHome": "Go to Home page"
     },
     "toasts": {
         "loginSuccess": "Welcome back!",

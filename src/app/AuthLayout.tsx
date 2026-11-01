@@ -19,7 +19,7 @@ export function AuthLayout() {
                     <Outlet />
                 </div>
                 <div className="absolute bottom-6">
-                    <TranslationButtonGroup />
+                    <TranslationButtonGroup className="w-32 justify-end" />
                 </div>
             </main>
         </div>

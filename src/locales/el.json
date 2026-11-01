@@ -3,7 +3,8 @@
         "translation": {
             "el": "ΕΛ",
             "en": "EN"
-        }
+        },
+        "goHome": "Επιστροφή στην αρχική σελίδα"
     },
     "toasts": {
         "loginSuccess": "Καλώς ήρθατε!",

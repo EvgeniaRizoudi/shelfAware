@@ -2,10 +2,10 @@ import { createBrowserRouter, Navigate } from "react-router";
 import { AppLayout } from "./AppLayout";
 import { DashboardPage } from "../features/dashboard/DashboardPage";
 import { SuppliersPage } from "../features/suppliers/SuppliersPage";
-import { InventoryPage } from "../features/inventory/InventoryPage";
+import { StockPage } from "../features/stock/StockPage";
 import { OrdersPage } from "../features/orders/OrdersPage";
-import { SettingsPage } from "../features/settings/SettingsPage";
-import { MapPage } from "../features/map/MapPage";
+import { NotificationsPage } from "../features/notifications/NotificationsPage";
+import { MessagesPage } from "../features/messages/MessagesPage";
 import { AuthLayout } from "./AuthLayout";
 import { LoginPage } from "../features/auth/login/LoginPage";
 import { RegisterPage } from "../features/auth/register/RegisterPage";
@@ -21,10 +21,10 @@ export const router = createBrowserRouter([
             { index: true, element: <DashboardPage /> },
             { path: "dashboard", element: <Navigate to="/" /> },
             { path: "suppliers", element: <SuppliersPage /> },
-            { path: "inventory", element: <InventoryPage /> },
+            { path: "stock", element: <StockPage /> },
             { path: "orders", element: <OrdersPage /> },
-            { path: "settings", element: <SettingsPage /> },
-            { path: "map", element: <MapPage /> },
+            { path: "notifications", element: <NotificationsPage /> },
+            { path: "messages", element: <MessagesPage /> },
         ],
     },
     {
