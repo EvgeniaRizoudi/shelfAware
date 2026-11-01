@@ -2,12 +2,16 @@ import { Button } from "@/components/ui/button";
 import { ButtonGroup } from "@/components/ui/button-group";
 import { useTranslation } from "react-i18next";
 
-export function TranslationButtonGroup() {
+type TranslationButtonGroupProps = {
+    className?: string;
+};
+
+export function TranslationButtonGroup({ className }: TranslationButtonGroupProps) {
     const { t, i18n } = useTranslation();
     const current = i18n.resolvedLanguage;
 
     return (
-        <ButtonGroup className="w-32 align-end justify-end">
+        <ButtonGroup className={className}>
             <Button
                 variant={current === "el" ? "default" : "secondary"}
                 aria-pressed={current === "el"}

@@ -18,8 +18,11 @@ api.interceptors.response.use(
             if (status === undefined) {
                 toast.error(i18n.t("errors.network"));
             } else if (status === 401) {
-                // TODO APO-8: log the user out and redirect to /login
+                const authPages = ["/login", "/forgot-password", "/reset-password"];
                 console.warn(i18n.t("errors.unauthorized"));
+                if (!authPages.includes(window.location.pathname)) {
+                    window.location.href = "/login";
+                }
             } else if (status === 403) {
                 toast.error(i18n.t("errors.forbidden"));
             } else if (status === 404) {
