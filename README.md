@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/shelfaware.gif" width="320" alt="ShelfAware: nothing expires on your watch">
+</p>
+
 # ShelfAware — frontend
 
 React + TypeScript + Vite app for ShelfAware, a hotel warehouse inventory system.
