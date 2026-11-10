@@ -2,31 +2,52 @@
   <img src="docs/shelfaware.gif" width="320" alt="ShelfAware: nothing expires on your watch">
 </p>
 
-# ShelfAware — frontend
+# ShelfAware
 
-React + TypeScript + Vite app for ShelfAware, a hotel warehouse inventory system.
+**Nothing expires on your watch.** ShelfAware is a warehouse and inventory app for hotels. It keeps track of what is in stock, what is about to run out or expire, and who ordered what, so nothing gets lost or wasted.
+
+## Who is it for?
+
+Hotel teams that work with a shared storage: kitchen and bar staff who order products, managers who approve and follow orders, and storekeepers who keep the shelves in order. Each person sees and orders only what their department and role allow.
+
+## What can it do?
+
+- Log in, register and reset a forgotten password
+- Stock, suppliers, orders, notifications and messages in one place
+- Departments and roles (admin, kitchen, service, storekeeper, ...) that decide who can order what
+- English and Greek
+
+> Work in progress: the app is built step by step, ticket by ticket.
+
+## Tech stack
+
+| Part        | Tools                                          |
+| ----------- | ---------------------------------------------- |
+| Framework   | React 19, TypeScript (strict), Vite            |
+| Styling     | Tailwind CSS v4, shadcn/ui, lucide-react icons |
+| Routing     | React Router                                   |
+| Server data | TanStack Query, axios (one shared instance)    |
+| Forms       | react-hook-form, zod                           |
+| Texts       | react-i18next (English and Greek)              |
+
+The backend lives in a separate repo (`shelfaware-api`): NestJS, Prisma and PostgreSQL.
 
 ## Getting started
+
+You need Node.js and the backend running (default `http://localhost:8000`).
 
 ```sh
 cp .env.example .env   # set VITE_API_URL to the backend URL
 npm install
-npm run dev
+npm run dev            # http://localhost:5173
 ```
 
-| Script          | What it does                                |
-| --------------- | ------------------------------------------- |
-| `npm run dev`   | Start the dev server                        |
-| `npm run build` | Type-check and build for production         |
-| `npm run check` | Run ESLint and Prettier checks              |
-| `npm run fix`   | Auto-fix lint issues and format all files   |
-
-## Tech stack
-
-- **React Router** for routing
-- **TanStack Query** for server data (fetching, caching, refetching)
-- **axios** for HTTP, through one shared instance
-- **i18next** for translations (English and Greek)
+| Script          | What it does                              |
+| --------------- | ----------------------------------------- |
+| `npm run dev`   | Start the dev server                      |
+| `npm run build` | Type-check and build for production       |
+| `npm run check` | Run ESLint and Prettier checks            |
+| `npm run fix`   | Auto-fix lint issues and format all files |
 
 ## Folder structure
 
