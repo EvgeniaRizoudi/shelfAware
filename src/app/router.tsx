@@ -14,6 +14,8 @@ import { PasswordResetPage } from "../features/auth/password-reset/PasswordReset
 import { AccountPage } from "../features/account/AccountPage";
 import { NotFoundPage } from "../features/not-found/NotFoundPage";
 import { ProtectedRoute } from "../components/ProtectedRoute";
+import { RequireRole } from "../components/RequireRole";
+import { MANAGER_ROLES } from "../lib/roles";
 
 export const router = createBrowserRouter([
     {
@@ -25,8 +27,13 @@ export const router = createBrowserRouter([
                 children: [
                     { index: true, element: <DashboardPage /> },
                     { path: "dashboard", element: <Navigate to="/" /> },
-                    { path: "suppliers", element: <SuppliersPage /> },
-                    { path: "stock", element: <StockPage /> },
+                    {
+                        element: <RequireRole roles={MANAGER_ROLES} />,
+                        children: [
+                            { path: "suppliers", element: <SuppliersPage /> },
+                            { path: "stock", element: <StockPage /> },
+                        ],
+                    },
                     { path: "orders", element: <OrdersPage /> },
                     { path: "notifications", element: <NotificationsPage /> },
                     { path: "messages", element: <MessagesPage /> },
