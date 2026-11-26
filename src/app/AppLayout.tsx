@@ -63,12 +63,14 @@ export function AppLayout() {
                     </SidebarFooter>
                 </Sidebar>
 
-                <SidebarTrigger />
+                <main className="relative isolate flex-1 overflow-hidden p-6">
+                    {/* soft colour blobs: top left and bottom right of the page, behind everything */}
+                    <div className="absolute -top-32 -left-32 -z-10 size-96 rounded-full bg-secondary blur-3xl" />
+                    <div className="absolute -right-32 -bottom-32 -z-10 size-96 rounded-full bg-primary/40 blur-3xl" />
+                    <SidebarTrigger />
+                    <Outlet />
+                </main>
             </SidebarProvider>
-
-            <main>
-                <Outlet />
-            </main>
         </div>
     );
 }
