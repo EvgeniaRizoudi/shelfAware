@@ -65,7 +65,7 @@ export function SelectField({
                         ))}
                     </SelectContent>
                 </Select>
-                {value && <ClearButton onClear={() => onValueChange("")} />}
+                {value && !disabled && <ClearButton onClear={() => onValueChange("")} />}
             </div>
             <FieldDescription
                 className={cn("min-h-4 text-xs leading-4", error && "text-destructive")}
