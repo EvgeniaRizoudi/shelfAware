@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="pl-loader" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Shelf Aware"><title>Shelf Aware</title><style>
+.pl-leg{fill:var(--foreground,#322C2B)}
+.pl-shelf{fill:var(--primary,#803D3B)}
+.pl-bracket{fill:#AF8260}
+.pl-brick{fill:#C98B86}
+.pl-tan{fill:#E4C59E}
+.pl-tan-dark{fill:#AF8260}
+.pl-apple{fill:#E08F86}
+.pl-leaf{fill:#9DBF9E}
+@media (prefers-reduced-motion:no-preference){
+.pl-box{animation:pl-box 2.6s infinite both}
+.pl-bottle{animation:pl-bottle 2.6s infinite both}
+.pl-jar{animation:pl-jar 2.6s infinite both}
+.pl-apple-g{animation:pl-apple 2.6s infinite both}
+.pl-shelf-g{transform-box:fill-box;transform-origin:50% 50%;animation:pl-shelf 2.6s ease-out infinite both}
+}
+@keyframes pl-box{
+0%,5%{transform:translateY(-55px);opacity:0;animation-timing-function:ease-in}
+8%{opacity:1}
+18%{transform:translateY(0)}
+20%{transform:translateY(-3px);animation-timing-function:ease-in}
+23%,88%{transform:translateY(0);opacity:1}
+95%,100%{transform:translateY(0);opacity:0}}
+@keyframes pl-bottle{
+0%,19%{transform:translateY(-55px);opacity:0;animation-timing-function:ease-in}
+22%{opacity:1}
+32%{transform:translateY(0)}
+34%{transform:translateY(-3px);animation-timing-function:ease-in}
+37%,88%{transform:translateY(0);opacity:1}
+95%,100%{transform:translateY(0);opacity:0}}
+@keyframes pl-jar{
+0%,33%{transform:translateY(-55px);opacity:0;animation-timing-function:ease-in}
+36%{opacity:1}
+46%{transform:translateY(0)}
+48%{transform:translateY(-3px);animation-timing-function:ease-in}
+51%,88%{transform:translateY(0);opacity:1}
+95%,100%{transform:translateY(0);opacity:0}}
+@keyframes pl-apple{
+0%,47%{transform:translateY(-55px);opacity:0;animation-timing-function:ease-in}
+50%{opacity:1}
+60%{transform:translateY(0)}
+62%{transform:translateY(-3px);animation-timing-function:ease-in}
+65%,88%{transform:translateY(0);opacity:1}
+95%,100%{transform:translateY(0);opacity:0}}
+@keyframes pl-shelf{
+0%,17%,23%,31%,37%,45%,51%,59%,65%,100%{transform:translateY(0)}
+19%,33%,47%,61%{transform:translateY(1.2px)}}
+</style>
+<path class="pl-leg" d="M14 108 L48 14 L62 14 L30 108 Z"/>
+<path class="pl-leg" d="M58 14 L72 14 L106 108 L90 108 Z"/>
+<g class="pl-box"><rect class="pl-brick" x="46" y="65" width="8" height="9" rx="1.2"/><rect class="pl-tan-dark" x="46" y="62.5" width="8" height="3" rx="1"/></g>
+<g class="pl-bottle"><rect class="pl-tan-dark" x="57.5" y="52" width="2" height="6"/><rect class="pl-shelf" x="57" y="50" width="3" height="2.5" rx="0.6"/><rect class="pl-tan-dark" x="56" y="57" width="5" height="17" rx="1.6"/></g>
+<g class="pl-jar"><rect class="pl-tan" x="63" y="66" width="8" height="8" rx="1.2"/><rect class="pl-shelf" x="63.5" y="64" width="7" height="2.4" rx="0.8"/></g>
+<g class="pl-apple-g"><circle class="pl-apple" cx="67" cy="60.6" r="3.6"/><path class="pl-leaf" d="M67 57.4 q1.6 -2.4 3.2 -1.6 q-1 2.2 -3.2 1.6 Z"/></g>
+<g class="pl-shelf-g"><rect class="pl-shelf" x="4" y="74" width="112" height="8" rx="1.5"/><path class="pl-bracket" d="M6 82 H17 L6 93 Z"/><path class="pl-bracket" d="M114 82 H103 L114 93 Z"/></g>
+</svg>
