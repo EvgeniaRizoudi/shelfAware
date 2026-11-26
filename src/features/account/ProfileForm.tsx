@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import { cn } from "@/lib/utils";
 import { LoaderCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PasswordInputField } from "@/components/PasswordInputField";
@@ -112,12 +111,7 @@ export function ProfileForm() {
 
     return (
         <form
-            className={cn(
-                "flex w-full flex-col gap-8",
-                // taller fields, only on this form: text inputs, selects, multi selects
-                "[&_[data-slot=input-group]]:h-11! [&_[data-slot=select-trigger]]:h-11!",
-                "[&_button[aria-haspopup=dialog]]:h-11! [&_input]:text-base!",
-            )}
+            className="flex w-full flex-col gap-8"
             noValidate
             onSubmit={handleSubmit((values) =>
                 updateMutation.mutate({
@@ -227,11 +221,7 @@ export function ProfileForm() {
                 </div>
             </div>
 
-            <Button
-                type="submit"
-                className="h-11 self-center px-10 text-base"
-                disabled={updateMutation.isPending}
-            >
+            <Button type="submit" className="self-center px-10" disabled={updateMutation.isPending}>
                 {updateMutation.isPending && <LoaderCircle className="animate-spin" />}
                 {submitButtonLabel}
             </Button>
