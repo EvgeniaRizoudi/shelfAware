@@ -11,6 +11,7 @@ import { LoginPage } from "../features/auth/login/LoginPage";
 import { RegisterPage } from "../features/auth/register/RegisterPage";
 import { ForgotPasswordPage } from "../features/auth/forgot-password/ForgotPasswordPage";
 import { PasswordResetPage } from "../features/auth/password-reset/PasswordResetPage";
+import { AccountPage } from "../features/account/AccountPage";
 import { NotFoundPage } from "../features/not-found/NotFoundPage";
 
 export const router = createBrowserRouter([
@@ -25,6 +26,7 @@ export const router = createBrowserRouter([
             { path: "orders", element: <OrdersPage /> },
             { path: "notifications", element: <NotificationsPage /> },
             { path: "messages", element: <MessagesPage /> },
+            { path: "account", element: <AccountPage /> },
         ],
     },
     {

@@ -21,6 +21,14 @@ export type CurrentUser = {
     id: number;
     email: string;
     name: string;
+    departmentRoles: {
+        userId: number;
+        departmentId: number;
+        roleId: number;
+        department: { id: number; name: string; parentId: number | null };
+        role: { id: number; name: string };
+    }[];
+    positions: { id: number; name: string }[];
 };
 
 export async function getCurrentUser() {

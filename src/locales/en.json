@@ -10,6 +10,7 @@
         "loginSuccess": "Welcome back!",
         "logoutSuccess": "You have been logged out",
         "registerSuccess": "Account created. You can log in now",
+        "updateSuccess": "Your account was updated",
         "passwordResetSuccess": "Password changed. Log in with your new password"
     },
     "errors": {
@@ -64,7 +65,25 @@
             "chooseDepartmentFirst": "Choose a department first",
             "submit": "Register",
             "alreadyUser": "Already a user? Login in"
+        },
+        "update": {
+            "title": "Update Account",
+            "placeholder": "Select...",
+            "editable": "Personal details",
+            "viewOnly": "Work details",
+            "name": "Full Name",
+            "email": "Email",
+            "password": "Password",
+            "confirmPassword": "Confirm password",
+            "department": "Department",
+            "positions": "Positions",
+            "roles": "Role",
+            "general": "General",
+            "submit": "Update"
         }
+    },
+    "account": {
+        "title": "Account"
     },
     "notFound": {
         "title": "Page not found",
