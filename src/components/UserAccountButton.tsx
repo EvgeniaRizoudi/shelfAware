@@ -10,7 +10,7 @@ export function UserAccountButton() {
 
     return (
         <>
-            <Button type="button" onClick={() => navigate("/userAccount")}>
+            <Button type="button" onClick={() => navigate("/account")}>
                 <CircleUserRound />
                 {buttonLabel}
             </Button>

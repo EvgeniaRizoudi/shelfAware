@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { XIcon } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Field, FieldDescription, FieldLabel } from "@/components/ui/field";
@@ -20,6 +20,11 @@ export function InputField({ label, hint, id, error, ref, ...inputProps }: Input
     const { t } = useTranslation();
     const inputRef = useRef<HTMLInputElement | null>(null);
     const [hasValue, setHasValue] = useState(false);
+
+    // values filled by code (react-hook-form `values`) fire no input event, so look after every render
+    useEffect(() => {
+        setHasValue(inputRef.current?.value !== "");
+    });
 
     // react-hook-form also needs the ref, so we hand the element to both
     function setRefs(element: HTMLInputElement | null) {
@@ -49,7 +54,7 @@ export function InputField({ label, hint, id, error, ref, ...inputProps }: Input
                     onInput={(event) => setHasValue(event.currentTarget.value !== "")}
                     aria-invalid={!!error}
                 />
-                {hasValue && (
+                {hasValue && !inputProps.disabled && (
                     <InputGroupAddon align="inline-end">
                         <InputGroupButton
                             type="button"

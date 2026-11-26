@@ -10,6 +10,7 @@
         "loginSuccess": "Καλώς ήρθατε!",
         "logoutSuccess": "Αποσυνδεθήκατε",
         "registerSuccess": "Ο λογαριασμός δημιουργήθηκε. Μπορείτε να συνδεθείτε",
+        "updateSuccess": "Ο λογαριασμός σας ενημερώθηκε",
         "passwordResetSuccess": "Ο κωδικός άλλαξε. Συνδεθείτε με τον νέο κωδικό σας"
     },
     "errors": {
@@ -64,7 +65,25 @@
             "chooseDepartmentFirst": "Επιλέξτε πρώτα τμήμα",
             "submit": "Εγγραφή",
             "alreadyUser": "Εχετε ήδη λογαριασμό; Συνδεθείτε εδώ"
+        },
+        "update": {
+            "title": "Ενημέρωση Λογαριασμού",
+            "placeholder": "Επιλέξτε...",
+            "editable": "Προσωπικά στοιχεία",
+            "viewOnly": "Στοιχεία εργασίας",
+            "name": "Ονοματεπώνυμο",
+            "email": "Email",
+            "password": "Κωδικός πρόσβασης",
+            "confirmPassword": "Επιβεβαίωση κωδικού",
+            "department": "Τμήμα",
+            "positions": "Θέση",
+            "roles": "Ρόλος",
+            "general": "Γενικά",
+            "submit": "Ενημέρωση"
         }
+    },
+    "account": {
+        "title": "Λογαριασμός"
     },
     "notFound": {
         "title": "Η σελίδα δεν βρέθηκε",

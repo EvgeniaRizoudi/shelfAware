@@ -90,7 +90,7 @@ export function MultiSelectField({
                         ))}
                     </PopoverContent>
                 </Popover>
-                {value.length > 0 && <ClearButton onClear={() => onValueChange([])} />}
+                {value.length > 0 && !disabled && <ClearButton onClear={() => onValueChange([])} />}
             </div>
             <FieldDescription
                 className={cn("min-h-4 text-xs leading-4", error && "text-destructive")}
