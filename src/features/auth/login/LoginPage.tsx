@@ -42,6 +42,7 @@ export function LoginPage() {
         mutationFn: login,
         onSuccess: () => {
             toast.success(t("toasts.loginSuccess"));
+            sessionStorage.setItem("showSplash", "1"); // ProtectedRoute plays the loader once
             navigate("/");
         },
         onError: (error) => {

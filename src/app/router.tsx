@@ -13,20 +13,33 @@ import { ForgotPasswordPage } from "../features/auth/forgot-password/ForgotPassw
 import { PasswordResetPage } from "../features/auth/password-reset/PasswordResetPage";
 import { AccountPage } from "../features/account/AccountPage";
 import { NotFoundPage } from "../features/not-found/NotFoundPage";
+import { ProtectedRoute } from "../components/ProtectedRoute";
+import { RequireRole } from "../components/RequireRole";
+import { MANAGER_ROLES } from "../lib/roles";
 
 export const router = createBrowserRouter([
     {
-        path: "/",
-        element: <AppLayout />,
+        element: <ProtectedRoute />,
         children: [
-            { index: true, element: <DashboardPage /> },
-            { path: "dashboard", element: <Navigate to="/" /> },
-            { path: "suppliers", element: <SuppliersPage /> },
-            { path: "stock", element: <StockPage /> },
-            { path: "orders", element: <OrdersPage /> },
-            { path: "notifications", element: <NotificationsPage /> },
-            { path: "messages", element: <MessagesPage /> },
-            { path: "account", element: <AccountPage /> },
+            {
+                path: "/",
+                element: <AppLayout />,
+                children: [
+                    { index: true, element: <DashboardPage /> },
+                    { path: "dashboard", element: <Navigate to="/" /> },
+                    {
+                        element: <RequireRole roles={MANAGER_ROLES} />,
+                        children: [
+                            { path: "suppliers", element: <SuppliersPage /> },
+                            { path: "stock", element: <StockPage /> },
+                        ],
+                    },
+                    { path: "orders", element: <OrdersPage /> },
+                    { path: "notifications", element: <NotificationsPage /> },
+                    { path: "messages", element: <MessagesPage /> },
+                    { path: "account", element: <AccountPage /> },
+                ],
+            },
         ],
     },
     {

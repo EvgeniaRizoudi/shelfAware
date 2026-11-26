@@ -17,16 +17,24 @@ import { Bell } from "lucide-react";
 import { MessagesCircle } from "lucide-react";
 import { TranslationButtonGroup } from "@/components/TranslationButtonGroup";
 import { UserAccountButton } from "@/components/UserAccountButton";
+import { useCurrentUser } from "@/features/auth/useCurrentUser";
+import { hasRole, MANAGER_ROLES } from "@/lib/roles";
 
 export function AppLayout() {
+    const { data: currentUser } = useCurrentUser();
     const children = [
         { to: "/dashboard", label: "Dashboard", icon: LayoutDashboardIcon },
-        { to: "/stock", label: "Stock", icon: ShelvingUnit },
-        { to: "/suppliers", label: "Suppliers", icon: Truck },
+        { to: "/stock", label: "Stock", icon: ShelvingUnit, roles: MANAGER_ROLES },
+        { to: "/suppliers", label: "Suppliers", icon: Truck, roles: MANAGER_ROLES },
         { to: "/orders", label: "Orders", icon: ReceiptText },
         { to: "/notifications", label: "Notifications", icon: Bell },
         { to: "/messages", label: "Messages", icon: MessagesCircle },
     ];
+
+    // the sieve: keep an item if it has no `roles` (everyone), or the user has one of its roles
+    const visibleLinks = children.filter(
+        (child) => !child.roles || hasRole(currentUser, child.roles),
+    );
 
     const headerLabel = "Grecotel Casa Paradiso";
     return (
@@ -45,7 +53,7 @@ export function AppLayout() {
                         </div>
                     </SidebarHeader>
                     <SidebarContent className="gap-1 px-3">
-                        {children.map((child) => (
+                        {visibleLinks.map((child) => (
                             <NavLink
                                 key={child.to}
                                 to={child.to}

@@ -4,7 +4,8 @@
             "el": "ΕΛ",
             "en": "EN"
         },
-        "goHome": "Go to Home page"
+        "goHome": "Go to Home page",
+        "loading": "Loading..."
     },
     "toasts": {
         "loginSuccess": "Welcome back!",
